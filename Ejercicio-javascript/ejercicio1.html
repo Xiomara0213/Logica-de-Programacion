@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+
+        //Crear una variable llamada numeroDeElementos que el profesor manipulará. Esta variable indicará el número de resultados que se imprimirán en consola de la serie Fibonnaci.
+        //El objetivo del ejercicio es que el programador sea capaz de imprimir todos los números de dicha serie hasta tener el número de dígitos indicado en la variable numeroDeElementos.
+
+
+        let numeroDeElementos = 6;
+        let a = 0, b = 1;
+        let Fibonnaci = [a, b];
+
+        if (!isNaN(numeroDeElementos) && Number.isInteger(numeroDeElementos) && numeroDeElementos >= 0) {
+            for (let i = 2; i < numeroDeElementos; i++) {
+                let temp = a + b;
+                Fibonnaci.push(temp);
+                a = b;
+                b = temp;
+            }
+        } else {
+            console.log("Por favor, ingrese un número de elementos válido mayor o igual a 0.");
+        }
+        console.log(Fibonnaci.join(', '));
+
+    </script>
+</body>
+</html>
